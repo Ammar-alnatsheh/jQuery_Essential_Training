@@ -7,6 +7,33 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+            // try each at a time
+
+            //$("#example").children().css("border", "3px solid red");
+           
+            let el = $("#para1");
+            
+            /*
+            el.prev().css("border", "3px solid green");
+            el.next().css("border", "3px solid blue");
+            el.parent().css("border", "3px solid red");
+            */
+
+            //el.parentsUntil($('body')).css("border", "3px solid red");
+
+            //$("#example").find("#para4").css("border", "3px solid red");
+
+            /*
+            var leftmargin = 0;
+            var border = 3;
+            $("#example p").each(function(index, element) {
+                    $(element).css("border", border+"px solid red")
+                          .css("margin-left", leftmargin);
+                border += 2;
+                leftmargin += 10;
+            });
+            */
+
         });
     </script>
 </head>
