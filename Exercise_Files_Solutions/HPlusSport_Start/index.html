@@ -15,6 +15,15 @@
           $("#products h2.product-name[data-type=mineralwater]").css("background-color", "blue");
           $("#products h2.product-name[data-type=proteinbar]").css("background-color", "red");
 
+          $("#productControls input").on('change',(e)=>{
+            let id = e.target.id;
+            if(e.target.checked) {
+              $("#products h2.product-name[data-type=" + id + "]").parent().show();
+            } else {
+              $("#products h2.product-name[data-type=" + id + "]").parent().hide();
+            }
+          });
+
         });
     </script>
 </head>
@@ -49,7 +58,7 @@
       <p>His quest began while training for his <em>first 5K marathon</em>, after recovering from a <em>lengthy injury</em> that left him with residual aches, pains, and decreased athletic performance. He yearned for <em>simple and natural ingredients</em>, in their purest form, instead of labels with <em>lengthy chemical names</em> and disclaimers. When no products lived up to his strict requirements, Henry set his sights on <em>creating products</em> that catered to his own vision.</p>
       <p>Today that vision has become H+ Sport…offering a variety of <a href="#products">supplements, energy bars and rehydration solutions</a>. At the foundation of H+ Sports are products backed by scientific and performance data.</p>
     </div>
-  </div><!-- container text -->
+  </div>
 </section><!-- #history -->
 
 <section id="products" class="section">
@@ -57,7 +66,20 @@
   <div class="container">
     <h2 class="headline">Products</h2>
     <p>H+ Sport is <em>dedicated to creating</em> eco-friendly, high-quality, nutrient-rich, nutritional products that <em>enhance active lifestyles</em>. We <a href="#guarantee">guarantee</a> it. Take a look at some of our products.</p>
-  </div><!-- container -->
+  </div>
+  <!-- container -->
+    <form >
+        <div id="productControls">
+            <span>Show: </span>
+            <input id="vitamin" type="checkbox" checked="checked" />
+            <label>Vitamins </label>
+            <input id="mineralwater" type="checkbox" checked="checked" />
+            <label>Mineral Water </label>
+            <input id="proteinbar" type="checkbox" checked="checked" />
+            <label>Protein Bars </label>
+        </div>
+    </form>
+
   <ul class="product-list">
     <li class="product-item" data-prod_id="V-A1037">
         <img class="product-image" src="images/products/vitamin-a.jpg" alt="Vitamin A - Product Photo">

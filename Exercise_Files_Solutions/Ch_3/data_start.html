@@ -7,11 +7,22 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script>
         $("document").ready(function() {
+            $("#content").after("<p id='display'>");
+
             document.getElementById("show").addEventListener("click", function (evt) {
+                $("#display").text("Data is " + JSON.stringify($("#example").data()));
             });
             document.getElementById("store").addEventListener("click", function (evt) {
+                $("#example").data('Name', 'Ammar');
+                $("#example").data({'Age': 123,
+                                    'Career': 'Software Eng'});
             });
             document.getElementById("remove").addEventListener("click", function (evt) {
+                // will remove all data
+                $("#example").removeData();
+
+                // will remove only Career
+                //$("#example").removeData('Career');
             });
         });
     </script>

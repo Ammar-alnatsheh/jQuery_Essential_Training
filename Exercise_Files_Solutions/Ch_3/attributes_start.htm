@@ -7,6 +7,29 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+
+            // get alt for all images and display them as a message at the bttm of the example div
+            
+            let idx = ['Grass', 'Leaf', 'Spring', 'Water'];
+            $("#example").after("<p id='alts'> We got ");
+            $("#alts").after("<p id='indexes'> Indexes for ");
+
+            $("img").each(function() {
+                let type = $(this).attr("alt");
+               $("#alts").append( type + " ");
+
+               // set the name attr to a value, Grass 0, Leaf 1, Spring 2, Water 3
+               $(this).attr("name", idx.indexOf(type));
+               $("#indexes").append( type + " " + idx.indexOf(type) + ',');
+
+               // set multiple attributes in one call
+               $(this).attr({"title": type, "name": idx.indexOf(type)});
+
+               // Remove the href from the <a> tags, making images unclickable
+                $(this).parent().removeAttr("href");
+            });
+
+
         });
     </script>
     <style type="text/css">
@@ -22,7 +45,7 @@
     <h1>Manipulating Attributes</h1>
     <div id="content">
 
-        <p>To read or change element attributes, use the <code>attr()</code> function. <code>removeAttr()</code> can be used
+        <p>To read or change element attributes, use the <code></code>attr()</code> function. <code>removeAttr()</code> can be used
             to remove attributes</p>
         <ul>
             <li><code>attr()</code>: get the value of an attribute</li>
