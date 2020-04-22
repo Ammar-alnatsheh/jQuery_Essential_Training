@@ -7,15 +7,34 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $(function() {
+            /* different ways
+            $("#theDiv").fade("fast");
+            $("#theDiv").fade("slow");
+            // time in MS
+            $("#theDiv").fade(1000);
+            $("#theDiv").fade(1000,"linear");
+            $("#theDiv").fade(1000,"swing");
+            */
+                
             $("#fadein").click(function() {
+                $("#theDiv").fadeIn("normal");
             });
             $("#fadeout").click(function() {
+                $("#theDiv").fadeOut("normal");
             });
             $("#fadeto3").click(function() {
+                $("#theDiv").fadeTo("slow", 0.3);
             });
             $("#fadeup").click(function() {
+                $("#theDiv").fadeTo("slow", 1.0, ()=>{
+                    alert('finish fading 100%');
+                });
             });
             $("#pulse").click(function() {
+                $("#theDiv").fadeTo("fast", 0.3)
+                            .fadeTo("fast", 1.0)
+                            .fadeTo("fast", 0.3)
+                            .fadeTo("fast", 1.0);
             });
         });
     </script>

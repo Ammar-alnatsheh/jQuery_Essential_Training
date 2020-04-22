@@ -7,11 +7,23 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $(function() {
+            /* different ways
+            $("#theDiv").slide("fast");
+            $("#theDiv").slide("slow");
+            // time in MS
+            $("#theDiv").slide(1000);
+            $("#theDiv").slide(1000,"linear");
+            $("#theDiv").slide(1000,"swing");
+            */
+
             $("#slideup").click(function() {
+                $("#theDiv").slideUp(1000);
             });
             $("#slidedown").click(function() {
+                $("#theDiv").slideDown(200);
             });
             $("#toggle").click(function() {
+                $("#theDiv").slideToggle("slow");
             });
         });
     </script>

@@ -8,10 +8,44 @@
     <script type="text/javascript">
         $(function() {
             $("#show").click(function() {
+                $("#theDiv").show(()=>{
+                    alert('finish show');
+                });
+                
+                /* different ways
+                $("#theDiv").show("fast");
+                $("#theDiv").show("slow");
+                // time in MS
+                $("#theDiv").show(1000);
+                $("#theDiv").show(1000,"linear");
+                $("#theDiv").show(1000,"swing");
+                */
             });
             $("#hide").click(function() {
+                $("#theDiv").hide(()=>{
+                    alert('finish hide');
+                });
+                /* different ways
+                $("#theDiv").hide("fast");
+                $("#theDiv").hide("slow");
+                // time in MS
+                $("#theDiv").hide(1000);
+                $("#theDiv").hide(1000,"linear");
+                $("#theDiv").hide(1000,"swing");
+                */
             });
             $("#toggle").click(function() {
+                $("#theDiv").toggle(()=>{
+                    alert('finish toggle');
+                });
+                /* different ways
+                $("#theDiv").toggle("fast", callback);
+                $("#theDiv").toggle("slow");
+                // time in MS
+                $("#theDiv").toggle(1000);
+                $("#theDiv").toggle(1000,"linear");
+                $("#theDiv").toggle(1000,"swing");
+                */
             });
         });
     </script>
