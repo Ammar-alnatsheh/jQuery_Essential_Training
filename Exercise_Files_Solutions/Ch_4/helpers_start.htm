@@ -7,6 +7,23 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $(function() {
+            function highlight () {
+                $("#evtTarget").toggleClass("highlighted");
+            }
+
+            $("#evtTarget").hover(highlight, highlight);
+
+            $("#evtTarget").click(()=> {
+                $("#evtTarget").html("<p>Click</p>");
+            });
+
+            $("#evtTarget").dblclick(()=> {
+                $("#evtTarget").html("<p>Double Click</p>");
+            });
+
+            $(window).resize(()=>{
+                $("#evtTarget").html("<p>Window resize</p>");
+            });
         });
     </script>
     <style type='text/css'>
