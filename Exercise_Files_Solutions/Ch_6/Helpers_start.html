@@ -18,6 +18,16 @@
         });
         
         function getData() {
+            /*
+                use this command line for OSX in the terminal to open Chrome without CORS policy
+                open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_sess_1" --disable-web-security
+            */
+        
+            // try each at a time
+            $.get("testdata.txt", successFn);
+            //$("#ajaxContent").load("testdata.html");
+            //$("#content").load("testdata.html #p2");
+
         }
 
         function successFn(result) {

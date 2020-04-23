@@ -14,6 +14,31 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+
+            $(document).ajaxStart(function () {
+                alert("AJAX starting");
+            });
+
+            $(document).ajaxStop(function () {
+                alert("AJAX request ended");
+            });
+
+            $(document).ajaxSend(function (evt, jqXHR, options) {
+                alert("About to Send request for data...");
+            });
+
+            $(document).ajaxComplete(function (evt, jqXHR, options) {
+                alert("Everything's finished!");
+            });
+
+            $(document).ajaxError(function (evt, jqXHR, settings, err) {
+                alert("We got a problem: " + err);
+            });
+
+            $(document).ajaxSuccess(function (evt, jqXHR, options) {
+                alert("Looks like everything worked!");
+            });
+
             getData();
         });
       

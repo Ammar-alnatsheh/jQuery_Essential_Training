@@ -30,6 +30,25 @@
 
             // set the product name in the proper placeholder
             $("#productName").text(prodName);
+
+            // solution for Ch 6
+            getJSONData();
+
+            function getJSONData() {
+                $.getJSON( 'product-data.json', successFn);
+            }
+
+            function successFn(result) {
+              result.products.forEach( product => {
+                if( product.prod_id === prodID) {
+                  $("#productStock").text(product.in_stock);
+                  $("#productPrice").text(product.retail_price);
+                  $("#productDesc").text(product.description);
+
+                }
+              });
+            }
+
     });
   </script>
 </head>
